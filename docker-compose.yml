@@ -1,0 +1,62 @@
+version: '3.4'
+
+services:
+  clients:
+    image: ${DOCKER_REGISTRY-}clients
+    build:
+      context: .
+      dockerfile: src/Blogs/Blog.API/Dockerfile
+
+  student.ui:
+    image: ${DOCKER_REGISTRY-}studentui
+    build:
+      context: .
+      dockerfile: src/Students/Student.UI/Dockerfile
+
+
+  product.api:
+    image: ${DOCKER_REGISTRY-}productapi
+    build:
+      context: .
+      dockerfile: src/Products/Product.API/Dockerfile
+
+
+  webapplication1:
+    image: ${DOCKER_REGISTRY-}webapplication1
+    build:
+      context: .
+      dockerfile: src/Companys/WebApplication1/Dockerfile
+
+
+  apigateway:
+    image: ${DOCKER_REGISTRY-}apigateway
+    build:
+      context: .
+      dockerfile: src/gate/APIgateway/Dockerfile
+    depends_on:
+      - db
+    networks:
+      - db-network
+
+  db:
+    container_name: db
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=data
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - db-network
+  
+networks:
+  db-network:
+    driver: bridge
+
+volumes:
+  pgdata:
+
+

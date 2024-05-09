@@ -1,0 +1,88 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/Product/",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7216
+        }
+      ],
+      "UpstreamPathTemplate": "/apigetewey/Products",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Product/",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7216
+        }
+      ],
+      "UpstreamPathTemplate": "/apigateway/Product/{id}",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Product/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7216
+        }
+      ],
+      "UpstreamPathTemplate": "/apigateway/Product/{id}",
+      "UpstreamHttpMethod": [ "Delete" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Product/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7216
+        }
+      ],
+      "UpstreamPathTemplate": "/apigateway/Product/{id}",
+      "UpstreamHttpMethod": [ "Update" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Student/",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7192
+        }
+      ],
+      "UpstreamPathTemplate": "/apigateway/Students/",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Client/",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7060
+        }
+      ],
+      "UpstreamPathTemplate": "/apigateway/Clients/",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Companies/",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7055
+        }
+      ],
+      "UpstreamPathTemplate": "/apigateway/Companies/",
+      "UpstreamHttpMethod": [ "Get" ]
+    }
+  ]
+}
